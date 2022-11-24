@@ -80,7 +80,7 @@ body {
 
 .header-img {
   width: 50%;
-  transition: 0.5s cubic-bezier(0.6, 0.03, 0.28, 0.98);  
+  transition: 0.5s cubic-bezier(0.6, 0.03, 0.28, 0.98);
   transform: scale(1);
 }
 
@@ -201,9 +201,9 @@ footer {
 .contenedor__videos iframe {
   margin-top: 100px;
   width: 50%;
-  -webkit-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
-box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 25px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 25px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 25px 0px rgba(0, 0, 0, 0.75);
 }
 
 .contenedor__footer a img {
