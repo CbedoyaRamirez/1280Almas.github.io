@@ -1,0 +1,79 @@
+/* prefix*/
+
+$prefixes: "webkit",
+"moz",
+"ms",
+"o",
+"none";
+
+@mixin prefix($property, $arguments) {
+  @each $prefix in $prefixes {
+    @if $prefix=="none" {
+      #{$property}: $arguments;
+    }
+
+    @else {
+      -#{$prefix}-#{$property}: $arguments;
+    }
+  }
+}
+
+/* contadores */
+
+@mixin alert-count($attr, $background, $color, $top, $right) {
+  content: attr($attr);
+  background-color: $background;
+  color: $color;
+  display: block;
+  position: absolute;
+  top: $top;
+  right: $right;
+  padding: 0 5px;
+  min-width: 24px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* triangulos */
+
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+
+  @if $round {
+    border-radius: 3px;
+  }
+
+  @if $direction==down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+    margin-top: 0 - round($size / 2.5);
+  }
+
+  @else if $direction==up {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+    margin-bottom: 0 - round($size / 2.5);
+  }
+
+  @else if $direction==right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    margin-right: -$size;
+  }
+
+  @else if $direction==left {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    margin-left: -$size;
+  }
+}

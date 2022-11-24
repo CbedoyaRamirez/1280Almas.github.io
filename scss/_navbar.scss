@@ -1,0 +1,1062 @@
+// Contents
+//
+// Navbar
+// Navbar brand
+// Navbar nav
+// Navbar text
+// Navbar divider
+// Responsive navbar
+// Navbar position
+// Navbar themes
+// Navbar peronsalizado
+
+
+// Navbar
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; // allow us to do the line break for collapsing content
+  align-items: center;
+  justify-content: space-between; // space out brand from logo
+  padding: 0;
+  /*$navbar-padding-y $navbar-padding-x;*/
+  background-color: $white;
+
+  // Because flex properties aren't inherited, we need to redeclare these first
+  // few properties so that content nested within behave properly.
+  >.container,
+  >.container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /*cambio
+  @include media-breakpoint-up(md) { 
+    padding: $navbar-padding-y $navbar-padding-x;
+  }*/
+}
+
+
+// Navbar brand
+//
+// Used for brand, project, or site names.
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: $navbar-brand-padding-y;
+  padding-bottom: $navbar-brand-padding-y;
+  margin-right: $navbar-padding-x;
+  font-size: $navbar-brand-font-size;
+  line-height: inherit;
+  white-space: nowrap;
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+}
+
+
+// Navbar nav
+//
+// Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .dropdown-menu {
+    position: static;
+    float: none;
+  }
+}
+
+
+// Navbar text
+//
+//
+
+.navbar-text {
+  display: inline-block;
+  padding-top: $nav-link-padding-y;
+  padding-bottom: $nav-link-padding-y;
+}
+
+
+// Responsive navbar
+//
+// Custom styles for responsive collapsing and toggling of navbar contents.
+// Powered by the collapse Bootstrap JavaScript plugin.
+
+// When collapsed, prevent the toggleable navbar contents from appearing in
+// the default flexbox row orientation. Requires the use of `flex-wrap: wrap`
+// on the `.navbar` parent.
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  // For always expanded or extra full navbars, ensure content aligns itself
+  // properly vertically. Can be easily overridden with flex utilities.
+  align-items: center;
+}
+
+// Button for toggling the navbar when in its collapsed state
+.navbar-toggler {
+  padding: $navbar-toggler-padding-y $navbar-toggler-padding-x;
+  font-size: $navbar-toggler-font-size;
+  line-height: 1;
+  background-color: transparent; // remove default button style
+  border: $border-width solid transparent; // remove default button style
+  @include border-radius($navbar-toggler-border-radius);
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .navbar-toggler elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+// Keep as a separate element so folks can easily override it with another icon
+// or image file as needed.
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+
+// Generate series of `.navbar-expand-*` responsive classes for configuring
+// where your navbar collapses.
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-down($breakpoint) {
+
+        >.container,
+        >.container-fluid {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+
+      @include media-breakpoint-up($next) {
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+
+        .navbar-nav {
+          flex-direction: row;
+
+          .dropdown-menu {
+            position: absolute;
+          }
+
+          .nav-link {
+            padding-right: $navbar-nav-link-padding-x;
+            padding-left: $navbar-nav-link-padding-x;
+          }
+        }
+
+        // For nesting containers, have to redeclare for alignment purposes
+        >.container,
+        >.container-fluid {
+          flex-wrap: nowrap;
+        }
+
+        .navbar-collapse {
+          display: flex !important; // stylelint-disable-line declaration-no-important
+
+          // Changes flex-bases to auto because of an IE10 bug
+          flex-basis: auto;
+        }
+
+        .navbar-toggler {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+
+// Navbar themes
+//
+// Styles for switching between navbars with light or dark background.
+
+// Dark links against a light background
+.navbar-light {
+  .navbar-brand {
+    color: $navbar-light-active-color;
+
+    @include hover-focus {
+      color: $navbar-light-active-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-light-color;
+
+      @include hover-focus {
+        color: $navbar-light-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-light-disabled-color;
+      }
+    }
+
+    .show>.nav-link,
+    .active>.nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-light-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-light-color;
+    border-color: $navbar-light-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: $navbar-light-toggler-icon-bg;
+  }
+
+  .navbar-text {
+    color: $navbar-light-color;
+
+    a {
+      color: $navbar-light-active-color;
+
+      @include hover-focus {
+        color: $navbar-light-active-color;
+      }
+    }
+  }
+}
+
+// White links against a dark background
+.navbar-dark {
+  .navbar-brand {
+    color: $navbar-dark-active-color;
+
+    @include hover-focus {
+      color: $navbar-dark-active-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-dark-color;
+
+      @include hover-focus {
+        color: $navbar-dark-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-dark-disabled-color;
+      }
+    }
+
+    .show>.nav-link,
+    .active>.nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: $navbar-dark-toggler-icon-bg;
+  }
+
+  .navbar-text {
+    color: $navbar-dark-color;
+
+    a {
+      color: $navbar-dark-active-color;
+
+      @include hover-focus {
+        color: $navbar-dark-active-color;
+      }
+    }
+  }
+}
+
+/*Made in William*/
+// Navbar peronsalizado
+//
+// NAV principal superior Y Redes SOCIALES
+.position-fixed {
+  top: 0;
+}
+
+@include media-breakpoint-up(lg) {
+  .bd-sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0rem;
+    z-index: $zindex-dropdown;
+    height: 100vh;
+  }
+
+  .bd-sidebar {
+    border-right: 1px solid rgba(0, 0, 0, .1);
+  }
+}
+.logoContent{
+  height: 53px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.logocorporativo-header {
+  margin: 15px;
+  text-align: center;
+
+  &.mCenter{
+    margin: 0 auto;
+  }
+
+  a {
+    font-size: 35px;
+    letter-spacing: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      margin: 0;
+
+      &:first-child {
+        color: $v-agro;
+      }
+
+      &:last-child {
+        color: $a-savia;
+      }
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .logo-text {
+    font-size: 6.6px;
+    margin-bottom: 0;
+  }
+}
+
+.nav-one,
+.nav-two,
+.nav-filter {
+  background: $limeGreen;
+  @include prefix(transition, all 0.3s ease-in-out);
+
+  .btn-nav-sup {
+    color: $white;
+    background: $modCyan;
+    font-weight: 400;
+    border-radius: 0;
+    padding: $nav-btn-padding-y $nav-btn-padding-x;
+    overflow: hidden;
+    position: relative;
+    border: 0;
+    display: table;
+    margin: auto;
+    @include prefix(transition, all 0.5s);
+    z-index: 0;
+    outline: none !important;
+
+    &:after {
+      @include prefix(transition, all 0.5s);
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: rgba(66, 171, 158, 0);
+      z-index: -1;
+    }
+
+    &:hover {
+      color: #fff !important;
+      text-decoration: $link-decoration;
+      background: $white;
+      border-radius: 0;
+    }
+
+    &:hover:after {
+      height: 100%;
+      width: 100%;
+      opacity: 1;
+      background: rgba(66, 171, 158, 0.88);
+    }
+  }
+}
+
+.nav-one {
+  border-bottom: 1px solid $border-color;
+}
+
+.nav-two {
+  @include media-breakpoint-down(md) {
+    background: $white;
+    @include prefix(transition, all 1s ease-in-out);
+  }
+}
+
+.fix {
+  padding-top: 53px;
+}
+
+.nav-interno {
+  z-index: 999;
+}
+
+.nav-two-bg {
+  @include prefix(box-shadow, 0 15px 15px -15px rgba(0, 0, 0, .3));
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $zindex-fixed;
+
+  @include media-breakpoint-down(sm) {
+    background: $limeGreen;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .sticky-top {
+    @include prefix(transition, all 3s ease-in-out);
+    /*&.d-md-block{
+      .nav-two-bg{
+        top: 53px;
+      }
+    }*/
+  }
+}
+
+
+
+// Contenedor nav principal y accesibilidad
+.nav-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 6rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+
+  .top {
+    .header {
+      display: none;
+    }
+
+    .menu-movil {
+      position: relative;
+
+      .nav-item {
+        &:last-child {
+          .nav-link {
+            border-bottom: none;
+
+            &:hover,
+            &:focus,
+            &:active {
+              &::before {
+                left: -0.2rem;
+              }
+            }
+          }
+        }
+
+        &#c-noticias [data-count] {
+          &::after {
+            background-color: $a-savia;
+          }
+        }
+
+        &#d-eventos [data-date] {
+          &::after {
+            @include alert-count(data-date, transparent, $v-agro, .8rem, 25px);
+            font-size: 14px;
+          }
+        }
+
+        [data-count]:not([data-count=""]) {
+          &::after {
+            @include alert-count(data-count, #FF7A72, $white, 50%, 25px);
+            @include prefix(transform, translateY(-50%));
+          }
+        }
+      }
+
+      .nav-link {
+        position: relative;
+        /*font-weight: bold;*/
+        color: #202121;
+        cursor: pointer;
+        border-bottom: $border-width solid $border-color;
+        @include prefix(transition, all 0.3s ease-in-out);
+
+        &::before {
+          background-color: $v-agro;
+          content: "";
+          height: 100%;
+          left: -0.2rem;
+          position: absolute;
+          top: 0;
+          width: 0.2rem;
+          @include prefix(transition, left 100ms cubic-bezier(0.86, 0, 0.07, 1));
+        }
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: $limeGreen;
+          @include prefix(transition, all 0.3s ease-in-out);
+
+          &::before {
+            left: 0;
+          }
+
+          [class^="icon-"],
+          [class*=" icon-"] {
+            color: $v-agro;
+          }
+        }
+
+        i.first-top {
+          padding-top: 12px;
+        }
+
+        i {
+          display: inline-flex;
+          font-size: 0.875rem;
+          @include prefix(transition, all 0.3s ease-in-out);
+        }
+
+        span {
+          display: block;
+          padding-top: 5px;
+          font-weight: 400;
+          color: #A6ABAB;
+          font-style: normal;
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  .box-bottom {
+    display: none;
+  }
+
+  @include media-breakpoint-down(md) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include prefix(transform, translateX(-320px));
+    @include prefix(transition, all 0.3s ease-in-out);
+    min-height: 100%;
+
+    .top {
+      .header {
+        display: flex;
+        height: 52px;
+        padding: 0 0 0 30px;
+        font-size: 1rem;
+        background-color: $limeGreen;
+        border-bottom: $border-width solid $border-color;
+        overflow: hidden;
+        @include prefix(transition, all 0.3s ease-in-out);
+
+        .title-nav {
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          letter-spacing: .25rem;
+          color: $v-agro;
+        }
+      }
+
+      .menu-movil {
+        right: 50px;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .box-bottom {
+      display: block;
+      background-color: $a-savia;
+      background-image: url(../images/bg/grid-agrosavia.png);
+      color: $white;
+      padding: 30px 25px;
+      width: 100%;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.nav-sidebar-open {
+  .collapse-container {
+    position: fixed;
+    @include prefix(transform, translateX(320px));
+
+    &:before {
+      content: '';
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .nav-main {
+    position: fixed;
+    @include prefix(transform, translateX(0));
+
+    .top {
+      .menu-movil {
+        box-shadow: 0 29px 32px -20px rgba(0, 0, 0, 0.5),
+          0 4px 11px -3px rgba(0, 0, 0, 0.25);
+        opacity: 1;
+        right: 0;
+        visibility: visible;
+        @include prefix(transition, all 0.5s ease-in-out);
+        @include prefix(transition-delay, 0.3s);
+      }
+    }
+
+    .box-bottom {
+      opacity: 1;
+      visibility: visible;
+      /*position: absolute;*/
+      bottom: 0;
+
+      .box-redes-text {
+        display: block;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.collapse-container {
+  position: relative;
+  min-height: 100%;
+  padding-top: 0;
+  @include prefix(transition, transform 0.5s ease);
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: $zindex-fixed;
+    opacity: 0;
+    visibility: hidden;
+    @include prefix(transition, all 0.5s ease-in-out);
+  }
+}
+
+// contenedor navegacion de accesibilidad
+.nav-accesibilidad {
+  background: $gray-900;
+  position: fixed;
+  z-index: 1022;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 280px;
+  width: 100%;
+  padding: 100px 20px 60px 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include prefix(transform, translateX(100%));
+  @include prefix(transition, transform 0.55s cubic-bezier(0.785, 0.135, 0.15, 0.86));
+
+  ul.main {
+    li {
+      @include prefix(transform, translateX(20px));
+      @include prefix(transition, 0.5s ease-in-out);
+      opacity: 0;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1rem;
+        display: block;
+        padding: 10px 0;
+        @include prefix(transition, 0.5s ease-in-out);
+      }
+    }
+  }
+
+  &.show {
+    @include prefix(transform, translateX(0px));
+
+    ul.main {
+      list-style-type: none;
+
+      li {
+        @include prefix(transform, translateX(0px));
+        opacity: 1;
+
+        @for $i from 1 through 100 {
+          &:nth-child(#{$i}) {
+            transition-delay: 0.15s * $i; // math
+          }
+        }
+      }
+    }
+  }
+}
+
+.acces-scroll {
+  overflow: hidden !important;
+}
+
+.bt-cerrar-acces {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+/*  OVERLAY
+========================================== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  width: 100%;
+  height: 100%;
+  @include prefix(transition, all 0.3s ease-in-out);
+  background-color: $black;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-accesibilidad {
+  &.show {
+    .overlay {
+      opacity: 0.75;
+      visibility: visible;
+    }
+  }
+}
+
+//boton nav principal movil
+.menu_sup_izq {
+  .item {
+    padding: 0 $navbar-padding-x;
+  }
+
+  .bt-menu {
+    display: none;
+    min-width: 115px;
+    color: #202121;
+    cursor: pointer;
+    overflow: hidden;
+    height: 52px;
+    line-height: 52px;
+    @include prefix(transition, all 0.3s ease-in-out);
+
+    .ico-menu {
+      top: -1px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    span {
+      display: inline-block;
+      @include prefix(transition, all 0.3s ease-in-out);
+
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+
+    &:hover {
+      .ico-menu {
+        .bar {
+          &:after {
+            left: 0;
+          }
+        }
+      }
+
+      span {
+        color: $gray-600;
+      }
+    }
+
+    @include media-breakpoint-down(xs) {
+      min-width: inherit;
+      width: 52px;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: block;
+    }
+  }
+}
+
+
+.ico-menu {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+
+  .bar {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $gray-800;
+    border-radius: 2px;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: $gray-500;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      z-index: 1;
+      @include prefix(transition, all 0.3s ease-in-out);
+    }
+
+    &:nth-child(1) {
+      top: 0;
+
+      &:after {
+        @include prefix(transition-delay, 0.1s);
+      }
+    }
+
+    &:nth-child(2) {
+      top: 6px;
+      width: 80%;
+
+      &:after {
+        @include prefix(transition-delay, 0.2s);
+      }
+    }
+
+    &:nth-child(3) {
+      top: 12px;
+
+      &:after {
+        @include prefix(transition-delay, 0.3s);
+      }
+    }
+  }
+}
+
+.nav-filter {
+  height: 53px;
+  line-height: 53px;
+  border-bottom: 3px solid $a-savia;
+  //position: relative;
+  //overflow: hidden;
+  @include prefix(transition, all 0.3s ease-in-out);
+
+  &.search-inner {
+    border-bottom-color: $v-agro;
+  }
+
+  .title-filter {
+    border-right: 1px solid $border-color;
+    padding: 0 $navbar-padding-x;
+  }
+
+  .search-filter {
+    border-right: 1px solid $border-color;
+    padding: 0 $navbar-padding-x;
+
+    i {
+      margin: 0;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-nav-scroll {
+    padding-bottom: .4rem;
+    height: 65px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sub-nav {
+    .flickity-viewport {
+      overflow: initial;
+    }
+
+    .group {
+      margin: -1px 0px;
+
+      &:first-child {
+        padding: 0 0.75rem;
+      }
+    }
+  }
+
+  .group {
+    border-right: 1px solid $border-color;
+    display: inline-flex;
+    margin: -3px 0px;
+
+    &:first-child {
+      display: inline-block;
+    }
+
+    &:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .btn {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      font-weight: 400;
+      font-size: 0.8125rem;
+      padding-top: 1.125rem;
+      padding-bottom: 0.875rem;
+      text-transform: uppercase;
+
+      &:hover,
+      &.active {
+        background: $white;
+      }
+
+      &:focus,
+      &.focus {
+        outline: 0;
+        box-shadow: $btn-focus-box-shadow;
+      }
+    }
+
+    a {
+      color: $body-color;
+    }
+
+    .icon-menu-user {
+      margin: 0 5px;
+    }
+
+    &.selected {
+      .btn {
+        font-weight: bold;
+      }
+    }
+
+    &.menu-search-input {
+      form {
+        width: 100%;
+      }
+
+      input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+
+        &::placeholder {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .btn-nav-scroll {
+    &.left-paddle {
+      left: 0;
+    }
+
+    &.right-paddle {
+      right: 0;
+    }
+  }
+}
+
+.nav-interno-up {
+  height: 50px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    &.nav {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .navbar-nav-scroll {
+    padding-bottom: .4rem;
+    height: 52px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+
+
+/*menu principal navbar-nav-scroll*/

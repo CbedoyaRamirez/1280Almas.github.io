@@ -1,0 +1,913 @@
+{
+	"drops": [{
+		"name": "Tibaitatá",
+		"address": "Kilómetro 14 vía Mosquera-Cundinamarca",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/centros-detalle.html",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "14",
+					"short_name": "14",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 14 vía Mosquera",
+					"short_name": "Km 14 vía Mosquera",
+					"types": ["route"]
+				}, {
+					"long_name": "Mosquera",
+					"short_name": "Mosquera",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Cundinamarca",
+					"short_name": "CUN",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 14 vía Mosquera-Cundinamarca",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 4.696079,
+							"lng": -74.203905
+						},
+						"southwest": {
+							"lat": 4.696079,
+							"lng": -74.203905
+						}
+					},
+					"location": {
+						"lat": 4.696079,
+						"lng": -74.203905
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 4.696079,
+							"lng": -74.203905
+						},
+						"southwest": {
+							"lat": 4.696079,
+							"lng": -74.203905
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "La Libertad",
+		"address": "Kilómetro 17, Vía Puerto López, Meta.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#2",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "17",
+					"short_name": "17",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 17, Vía Puerto López, Meta.",
+					"short_name": "Km 17, Vía Puerto López, Meta.",
+					"types": ["route"]
+				}, {
+					"long_name": "Puerto López",
+					"short_name": "Puerto López",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Meta",
+					"short_name": "Meta",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 17, Vía Puerto López, Meta.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 4.0574386,
+							"lng": -73.4676386
+						},
+						"southwest": {
+							"lat": 4.0574386,
+							"lng": -73.4676386
+						}
+					},
+					"location": {
+						"lat": 4.0574386,
+						"lng": -73.4676386
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 4.0574386,
+							"lng": -73.4676386
+						},
+						"southwest": {
+							"lat": 4.0574386,
+							"lng": -73.4676386
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "Palmira",
+		"address": "Diagonal a la intersección de la Carrera 36A con Calle 23, Palmira, Valle del Cauca.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#3",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "36",
+					"short_name": "36",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Diagonal a la intersección de la Carrera 36A con Calle 23, Palmira, Valle del Cauca.",
+					"short_name": "Dg. a la Inter. de la Cr. 36A con Calle 23, Palmira, Valle del Cauca.",
+					"types": ["route"]
+				}, {
+					"long_name": "Palmira",
+					"short_name": "Palmira",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Valle del Cauca",
+					"short_name": "Valle del Cauca",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Diagonal a la intersección de la Carrera 36A con Calle 23, Palmira, Valle del Cauca.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 3.5213166,
+							"lng": -76.3086416
+						},
+						"southwest": {
+							"lat": 3.5213166,
+							"lng": -76.3086416
+						}
+					},
+					"location": {
+						"lat": 3.5213166,
+						"lng": -76.3086416
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 3.5213166,
+							"lng": -76.3086416
+						},
+						"southwest": {
+							"lat": 3.5213166,
+							"lng": -76.3086416
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "Motilonia",
+		"address": "kilómetro 5 vía a Becerril, Agustín Codazzi, Cesar.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#4",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "5",
+					"short_name": "5",
+					"types": ["street_number"]
+				}, {
+					"long_name": "kilómetro 5 vía a Becerril, Agustín Codazzi, Cesar.",
+					"short_name": "Km. 5 vía a Becerril, Agustín Codazzi, Cesar.",
+					"types": ["route"]
+				}, {
+					"long_name": "Agustín Codazzi",
+					"short_name": "Agustín Codazzi",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Cesar",
+					"short_name": "Cesar",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "kilómetro 5 vía a Becerril, Agustín Codazzi, Cesar.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 10.002176,
+							"lng": -73.247694
+						},
+						"southwest": {
+							"lat": 10.002176,
+							"lng": -73.247694
+						}
+					},
+					"location": {
+						"lat": 10.002176,
+						"lng": -73.247694
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 10.002176,
+							"lng": -73.247694
+						},
+						"southwest": {
+							"lat": 10.002176,
+							"lng": -73.247694
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "Turipaná",
+		"address": "Kilómetro 13, Vía Montería-Cereté, Córdoba.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#5",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "13",
+					"short_name": "13",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 13, Vía Montería-Cereté, Córdoba.",
+					"short_name": "Km. 13, Vía Montería-Cereté, Córdoba.",
+					"types": ["route"]
+				}, {
+					"long_name": "Montería",
+					"short_name": "Montería",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Córdoba",
+					"short_name": "Córdoba",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 13, Vía Montería-Cereté, Córdoba.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 8.850487,
+							"lng": -75.8175678
+						},
+						"southwest": {
+							"lat": 8.850487,
+							"lng": -75.8175678
+						}
+					},
+					"location": {
+						"lat": 8.850487,
+						"lng": -75.8175678
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 8.850487,
+							"lng": -75.8175678
+						},
+						"southwest": {
+							"lat": 8.850487,
+							"lng": -75.8175678
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "Caribia",
+		"address": "Corregimiento de Sevilla, municipio Zona Bananera, Magdalena, a 65 km al sur de Santa Marta.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#6",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "0",
+					"short_name": "0",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Corregimiento de Sevilla, municipio Zona Bananera, Magdalena, a 65 km al sur de Santa Marta.",
+					"short_name": "Corregimiento de Sevilla, municipio Zona Bananera, Magdalena, a 65 km al sur de Santa Marta.",
+					"types": ["route"]
+				}, {
+					"long_name": "Santa Marta",
+					"short_name": "Santa Marta",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Magdalena",
+					"short_name": "Magdalena",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Corregimiento de Sevilla, municipio Zona Bananera, Magdalena, a 65 km al sur de Santa Marta.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 10.7640225,
+							"lng": -74.1467399
+						},
+						"southwest": {
+							"lat": 10.7640225,
+							"lng": -74.1467399
+						}
+					},
+					"location": {
+						"lat": 10.7640225,
+						"lng": -74.1467399
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 10.7640225,
+							"lng": -74.1467399
+						},
+						"southwest": {
+							"lat": 10.7640225,
+							"lng": -74.1467399
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "La Selva",
+		"address": "Kilómetro 7, Vía a Las Palmas, vereda Llano Grande, Antioquia.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#7",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "7",
+					"short_name": "7",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 7, Vía a Las Palmas, vereda Llano Grande, Antioquia.",
+					"short_name": "Km. 7, Vía a Las Palmas, vereda Llano Grande, Antioquia.",
+					"types": ["route"]
+				}, {
+					"long_name": "Rionegro",
+					"short_name": "Rionegro",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Antioquia",
+					"short_name": "Antioquia",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 7, Vía a Las Palmas, vereda Llano Grande, Antioquia.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 6.12941,
+							"lng": -75.4140903
+						},
+						"southwest": {
+							"lat": 6.12941,
+							"lng": -75.4140903
+						}
+					},
+					"location": {
+						"lat": 6.12941,
+						"lng": -75.4140903
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 6.12941,
+							"lng": -75.4140903
+						},
+						"southwest": {
+							"lat": 6.12941,
+							"lng": -75.4140903
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "El Nus",
+		"address": "Corregimiento San José del Nus, municipio de San Roque, Antioquia.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#8",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "0",
+					"short_name": "0",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Corregimiento San José del Nus, municipio de San Roque, Antioquia.",
+					"short_name": "Corregimiento San José del Nus, municipio de San Roque, Antioquia.",
+					"types": ["route"]
+				}, {
+					"long_name": "San Roque",
+					"short_name": "San Roque",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Antioquia",
+					"short_name": "Antioquia",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Corregimiento San José del Nus, municipio de San Roque, Antioquia.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 6.4860992,
+							"lng": -74.8376814
+						},
+						"southwest": {
+							"lat": 6.4860992,
+							"lng": -74.8376814
+						}
+					},
+					"location": {
+						"lat": 6.4860992,
+						"lng": -74.8376814
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 6.4860992,
+							"lng": -74.8376814
+						},
+						"southwest": {
+							"lat": 6.4860992,
+							"lng": -74.8376814
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "Carimagua",
+		"address": "Kilómetro 330, Vía Villavicencio -Puerto Carreño, Vichada.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#9",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "330",
+					"short_name": "330",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 330, Vía Villavicencio -Puerto Carreño, Vichada.",
+					"short_name": "Km. 330, Vía Villavicencio -Puerto Carreño, Vichada.",
+					"types": ["route"]
+				}, {
+					"long_name": "Puerto Carreño",
+					"short_name": "Puerto Carreño",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Vichada",
+					"short_name": "Vichada",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 330, Vía Villavicencio -Puerto Carreño, Vichada.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 4.573544,
+							"lng": -71.336071
+						},
+						"southwest": {
+							"lat": 4.573544,
+							"lng": -71.336071
+						}
+					},
+					"location": {
+						"lat": 4.573544,
+						"lng": -71.336071
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 4.573544,
+							"lng": -71.336071
+						},
+						"southwest": {
+							"lat": 4.573544,
+							"lng": -71.336071
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "La Suiza",
+		"address": "Kilómetro 32 vía al mar, vereda Galápagos, Rionegro-Santander.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#10",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "32",
+					"short_name": "32",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 32 vía al mar, vereda Galápagos, Rionegro-Santander.",
+					"short_name": "Km. 32 vía al mar, vereda Galápagos, Rionegro-Santander.",
+					"types": ["route"]
+				}, {
+					"long_name": "Rionegro",
+					"short_name": "Rionegro",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Santander",
+					"short_name": "Santander",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 32 vía al mar, vereda Galápagos, Rionegro-Santander.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 7.370175,
+							"lng": -73.177634
+						},
+						"southwest": {
+							"lat": 7.370175,
+							"lng": -73.177634
+						}
+					},
+					"location": {
+						"lat": 7.370175,
+						"lng": -73.177634
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 7.370175,
+							"lng": -73.177634
+						},
+						"southwest": {
+							"lat": 7.370175,
+							"lng": -73.177634
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "Cimpa",
+		"address": "Kilómetro 2 vía antigua a Cipe, Barbosa, Santander.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#11",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "2",
+					"short_name": "2",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 2 vía antigua a Cipe, Barbosa, Santander.",
+					"short_name": "Km. 2 vía antigua a Cipe, Barbosa, Santander.",
+					"types": ["route"]
+				}, {
+					"long_name": "Barbosa",
+					"short_name": "Barbosa",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Santander",
+					"short_name": "Santander",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 2 vía antigua a Cipe, Barbosa, Santander.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 5.947553,
+							"lng": -73.606765
+						},
+						"southwest": {
+							"lat": 5.947553,
+							"lng": -73.606765
+						}
+					},
+					"location": {
+						"lat": 5.947553,
+						"lng": -73.606765
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 5.947553,
+							"lng": -73.606765
+						},
+						"southwest": {
+							"lat": 5.947553,
+							"lng": -73.606765
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "Nataima",
+		"address": "Kilómetro 9, Vía El Espinal-Chicoral, Tolima.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#12",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "9",
+					"short_name": "9",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 9, Vía El Espinal-Chicoral, Tolima.",
+					"short_name": "Km. 9, Vía El Espinal-Chicoral, Tolima.",
+					"types": ["route"]
+				}, {
+					"long_name": "El Espinal",
+					"short_name": "El Espinal",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Tolima",
+					"short_name": "Tolima",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 9, Vía El Espinal-Chicoral, Tolima.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 4.191546,
+							"lng": -74.960867
+						},
+						"southwest": {
+							"lat": 4.191546,
+							"lng": -74.960867
+						}
+					},
+					"location": {
+						"lat": 4.191546,
+						"lng": -74.960867
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 4.191546,
+							"lng": -74.960867
+						},
+						"southwest": {
+							"lat": 4.191546,
+							"lng": -74.960867
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "El Mira",
+		"address": "Kilómetro 38, Vía Tumaco-Pasto, Nariño.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#13",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "38",
+					"short_name": "38",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 38, Vía Tumaco-Pasto, Nariño.",
+					"short_name": "KM. 38, Vía Tumaco-Pasto, Nariño.",
+					"types": ["route"]
+				}, {
+					"long_name": "Tumaco",
+					"short_name": "Tumaco",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Nariño",
+					"short_name": "Nariño",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 38, Vía Tumaco-Pasto, Nariño.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 1.5512257,
+							"lng": -78.7007294
+						},
+						"southwest": {
+							"lat": 1.5512257,
+							"lng": -78.7007294
+						}
+					},
+					"location": {
+						"lat": 1.5512257,
+						"lng": -78.7007294
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 1.5512257,
+							"lng": -78.7007294
+						},
+						"southwest": {
+							"lat": 1.5512257,
+							"lng": -78.7007294
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}, {
+		"name": "Obonuco",
+		"address": "Kilómetro 5, Vía Pasto-Obonuco, Nariño.",
+		"phone": "(435) 867-0800",
+		"hours": "L-V, 7:30 a.m. a 4:30 p.m.",
+		"link": "/#14",
+		"lat": 0,
+		"long": 0,
+		"geocode": [{
+			"results": [{
+				"address_components": [{
+					"long_name": "5",
+					"short_name": "5",
+					"types": ["street_number"]
+				}, {
+					"long_name": "Kilómetro 5, Vía Pasto-Obonuco, Nariño.",
+					"short_name": "Km 5, Vía Pasto-Obonuco, Nariño.",
+					"types": ["route"]
+				}, {
+					"long_name": "Pasto",
+					"short_name": "Pasto",
+					"types": ["locality", "political"]
+				}, {
+					"long_name": "Nariño",
+					"short_name": "Nariño",
+					"types": ["administrative_area_level_1", "political"]
+				}, {
+					"long_name": "Colombia",
+					"short_name": "COL",
+					"types": ["country", "political"]
+				}],
+				"formatted_address": "Kilómetro 5, Vía Pasto-Obonuco, Nariño.",
+				"geometry": {
+					"bounds": {
+						"northeast": {
+							"lat": 1.1989263,
+							"lng": -77.3065126
+						},
+						"southwest": {
+							"lat": 1.1989263,
+							"lng": -77.3065126
+						}
+					},
+					"location": {
+						"lat": 1.1989263,
+						"lng": -77.3065126
+					},
+					"location_type": "RANGE_INTERPOLATED",
+					"viewport": {
+						"northeast": {
+							"lat": 1.1989263,
+							"lng": -77.3065126
+						},
+						"southwest": {
+							"lat": 1.1989263,
+							"lng": -77.3065126
+						}
+					}
+				},
+				"partial_match": true,
+				"types": ["street_address"]
+			}],
+			"status": "OK"
+		}],
+		"test": 196
+	}]
+}

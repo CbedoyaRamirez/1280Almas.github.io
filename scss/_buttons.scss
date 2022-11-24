@@ -1,0 +1,866 @@
+// stylelint-disable selector-no-qualifying-type
+
+//
+// Base styles
+//
+
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: $btn-border-width solid transparent;
+  @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+  @include transition($btn-transition);
+
+  // Share hover and focus styles
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  // Opinionated: add "hand" cursor to non-disabled .btn elements
+  &:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    background-image: none;
+    @include box-shadow($btn-active-box-shadow);
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+@each $color,
+$value in $theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color,
+$value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}
+
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  font-weight: $font-weight-normal;
+  color: $link-color;
+  background-color: transparent;
+
+  @include hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:focus,
+  &.focus {
+    text-decoration: $link-hover-decoration;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+    pointer-events: none;
+  }
+
+  // No need for an active state here
+}
+
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+
+//
+// Block button
+//
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  +.btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+
+
+// will
+
+.bt-close {
+  cursor: pointer;
+  padding: 26px 37px;
+  color: #202121;
+  overflow: hidden;
+  z-index: 1;
+  @include prefix(transition, all 0.3s ease-in-out);
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 27px;
+    width: 20px;
+    height: 3px;
+    background: #202121;
+    @include prefix(transform, rotate(45deg));
+    @include prefix(transition, all 0.3s ease-in-out);
+  }
+
+  &::after {
+    @include prefix(transform, rotate(-45deg));
+  }
+}
+
+#close-menu-acces {
+  &.bt-close {
+
+    &::before,
+    &::after {
+      background: $white;
+    }
+  }
+}
+
+.button-slider {
+  border: 2px solid transparent;
+  border-radius: $border-radius-w;
+  font-size: $font-size-base - 0.312rem;
+  letter-spacing: 1.3px;
+  padding: 7px 20px;
+  text-transform: uppercase;
+  z-index: 1;
+
+  &:hover {
+    box-shadow: none !important;
+  }
+
+  &:focus,
+  &.focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  @include hover-focus {
+    text-decoration: none;
+  }
+}
+
+/*---------Btn Share------------*/
+.container-share {
+  color: $c-primary-text;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 36rem) {
+    @include prefix(transform, translateY(-50%) rotate(90deg) translateX(-50%));
+  }
+
+
+  .follow,
+  .share {
+    display: inline-flex;
+    cursor: default;
+    padding: 0;
+    margin: 0 .5em;
+    position: relative;
+    text-align: center;
+
+    li {
+      list-style: none;
+      margin: 0 3px 0 0;
+    }
+
+    &:hover .label {
+      opacity: 0;
+      @include prefix(transition, opacity .5s .125s ease-out);
+    }
+
+    &:hover .icon {
+      border-radius: 1em;
+      margin: 0 0;
+    }
+  }
+
+  .icon,
+  .label {
+    background-color: $c-primary;
+    line-height: 2rem;
+  }
+
+  .label {
+    /*border-radius: 1rem;
+    position: absolute;
+    font-size: .618em;
+    font-weight: 900;
+    letter-spacing: .0816em;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    pointer-events: none;
+    text-transform: uppercase;
+    transition: opacity .5s .75s ease-out;*/
+    border-radius: 1rem;
+    position: absolute;
+    font-size: 1.618em;
+    top: 0;
+    line-height: 25px;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    width: 100%;
+    @include prefix(transition, opacity .5s .75s ease-out);
+  }
+
+  .icon {
+    border-radius: 0;
+    cursor: pointer;
+    display: inline-block;
+    height: 2em;
+    margin: 0 -.5em;
+    @include prefix(transition, background-color .5s ease-out);
+    @include prefix(transition, border-radius .5s .25s ease-out);
+    @include prefix(transition, margin .5s .25s ease-out);
+    width: 2em;
+
+    &.first {
+      border-bottom-left-radius: 1em;
+      border-top-left-radius: 1em;
+      margin-left: 0;
+    }
+
+    &.last {
+      border-bottom-right-radius: 1em;
+      border-top-right-radius: 1em;
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: $c-secondary;
+      color: $c-secondary-text;
+    }
+  }
+
+  button {
+    appearance: none;
+    border-radius: 50%;
+    border: 0;
+    background-color: $c-primary;
+    color: $c-primary-text;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 900;
+    letter-spacing: .0816em;
+    position: relative;
+    text-transform: uppercase;
+    @include prefix(transition, background-color .25s ease-out);
+    @include prefix(transition, transform .5s ease-out);
+
+    &:hover {
+      background-color: $c-secondary;
+      color: $c-secondary-text;
+    }
+  }
+
+  .try {
+    font-size: .618rem;
+    height: 3rem;
+    width: 3rem;
+    margin: 0 .5rem;
+
+    &:hover {
+      transform: scale(1.3333);
+
+      .text {
+        display: inline-block;
+        transform: scale(.75);
+      }
+
+      ~.buy {
+        transform: scale(.75);
+      }
+    }
+
+    .text {
+      @include prefix(transition, transform .5s ease-out);
+      transform: scale(1);
+    }
+  }
+
+  .buy {
+    width: 5rem;
+    height: 5rem;
+    background-color: $c-secondary;
+    color: $c-secondary-text;
+
+    .price,
+    .text {
+      @include prefix(transition, opacity .25s ease-out);
+    }
+
+    .price {
+      font-size: 1.618em;
+      opacity: 1;
+    }
+
+    .text {
+      display: block;
+      font-size: .618em;
+      font-weight: 900;
+      letter-spacing: .0816em;
+      position: absolute;
+      opacity: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      vertical-align: baseline;
+    }
+
+    &:hover .price {
+      opacity: 0;
+    }
+
+    &:hover .text {
+      opacity: 1;
+    }
+  }
+}
+
+.bg-primary {
+  .box-right {
+    .btn-share {
+      &:hover {
+        color: $green-dark;
+      }
+    }
+  }
+}
+
+.box-right {
+  .btn-share {
+    color: $limeGreen;
+    @include prefix(transition, all 0.3s ease-in-out);
+
+    &:hover {
+      color: $ot;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 0.2rem rgba($in, .25);
+    }
+  }
+}
+
+.btn-share {
+  color: $white;
+  display: flex;
+  border-radius: 1rem;
+  font-size: 1.618em;
+  line-height: 25px;
+  width: 100%;
+  @include prefix(transition, opacity .5s .75s ease-out);
+
+  &:hover {
+    color: $gray-date;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, .25);
+  }
+}
+
+
+.btn-floating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+  width: 47px;
+  height: 47px;
+  margin: 10px;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  @include prefix(transition, all .2s ease-in-out);
+
+  i {
+    margin-right: 0;
+    font-size: 1.25rem;
+    line-height: 47px;
+  }
+
+  &:hover {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .19);
+    text-decoration: none;
+    border: 0px solid transparent;
+    @include prefix(transition, all .2s ease-in-out);
+
+    i {
+      font-size: 1rem
+    }
+  }
+
+  &:focus,
+  &:active {
+    box-shadow: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    color: $black;
+    box-shadow: none;
+    margin: 0;
+
+    &:hover {
+      color: $black;
+      box-shadow: none;
+      opacity: 0.75;
+      background-color: transparent;
+      text-shadow: 0px 1px 5px #dcd9d9;
+    }
+
+    i {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.btn-social-group {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-social {
+  &:hover {
+    a {
+      &.btn-fb:hover {
+        background-color: $fb;
+      }
+
+      &.btn-tw:hover {
+        background-color: $tw;
+      }
+
+      &.btn-ins:hover {
+        background-color: $ins;
+      }
+
+      &.btn-yt:hover {
+        background-color: $yt;
+      }
+
+      &.btn-whatsapp:hover {
+        background-color: $ws;
+      }
+    }
+  }
+}
+
+.btn-border-x3 {
+  border: 1px solid rgba($white, 0.5);
+  color: #fff !important;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * Floating Action Button with Menu
+ * ------------------------------------------------------------------- */
+
+
+
+/* Propeller buttons */
+.pmd-floating-action {
+  .btn {
+    background-color: $modCyan;
+    color: $white;
+  }
+}
+
+.btn.pmd-btn-raised {
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.btn.pmd-btn-raised:active,
+.btn.pmd-btn-raised:focus,
+.btn.pmd-btn-raised.active,
+.btn.pmd-btn-raised:active:focus,
+.btn.pmd-btn-raised.active:focus {
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.btn.pmd-btn-fab {
+  padding: 0;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+}
+
+.btn.pmd-btn-fab span,
+.btn.pmd-btn-fab i {
+  line-height: 56px;
+}
+
+.btn.pmd-btn-fab.btn-sm {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+}
+
+.btn.pmd-btn-fab.btn-sm span,
+.btn.pmd-btn-fab.btn-sm i {
+  line-height: 40px;
+}
+
+
+
+.pmd-ripple-effect {
+  position: relative;
+  overflow: hidden;
+  @include prefix(transform, translate3d(0, 0, 0));
+}
+
+.icon-share.pmd-sm {
+  font-size: 1.5rem;
+}
+
+/* Propeller css for Floating Action Button*/
+.pmd-floating-action {
+  display: none;
+  bottom: 30px;
+  right: 30px;
+  position: fixed;
+  z-index: $zindex-dropdown;
+  @include prefix(transition, all 0.3s ease-out);
+
+  a,
+  a:visited {
+    @include prefix(transition, all 0.3s ease-in-out);
+
+    i {
+      margin: 0;
+    }
+  }
+}
+
+.pmd-floating-action-btn {
+  display: block;
+  position: relative;
+  @include prefix(transition, all 0.3s ease-out);
+}
+
+.pmd-floating-action-btn:before {
+  bottom: 10%;
+  content: attr(data-title);
+  opacity: 0;
+  position: absolute;
+  right: 100%;
+  transition: all .2s ease-out .5s;
+  white-space: nowrap;
+  background-color: #fff;
+  padding: 6px 12px;
+  border-radius: 2px;
+  color: #333;
+  font-size: 12px;
+  margin-right: 5px;
+  display: inline-block;
+  box-shadow: 0px 2px 3px -2px rgba(0, 0, 0, 0.18), 0px 2px 2px -7px rgba(0, 0, 0, 0.15);
+}
+
+.pmd-floating-action-btn:last-child:before {
+  font-size: 14px;
+  bottom: 25%;
+}
+
+.pmd-floating-action-btn:active,
+.pmd-floating-action-btn:focus,
+.pmd-floating-action-btn:hover {
+  box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+}
+
+.pmd-floating-action-btn:not(:last-child) {
+  opacity: 0;
+  -ms-transform: translateY(20px) scale(0.3);
+  transform: translateY(20px) scale(0.3);
+  margin-bottom: 15px;
+  margin-left: 8px;
+  position: absolute;
+  bottom: 0;
+}
+
+.pmd-floating-action-btn:not(:last-child):nth-last-child(1) {
+  transition-delay: 50ms;
+}
+
+.pmd-floating-action-btn:not(:last-child):nth-last-child(2) {
+  transition-delay: 100ms;
+}
+
+.pmd-floating-action-btn:not(:last-child):nth-last-child(3) {
+  transition-delay: 150ms;
+}
+
+.pmd-floating-action-btn:not(:last-child):nth-last-child(4) {
+  transition-delay: 200ms;
+}
+
+.pmd-floating-action-btn:not(:last-child):nth-last-child(5) {
+  transition-delay: 250ms;
+}
+
+.pmd-floating-action-btn:not(:last-child):nth-last-child(6) {
+  transition-delay: 300ms;
+}
+
+.pmd-floating-action:hover .pmd-floating-action-btn,
+.menu--floating--open .pmd-floating-action-btn {
+  opacity: 1;
+  -ms-transform: none;
+  transform: none;
+  position: relative;
+  bottom: auto;
+}
+
+.pmd-floating-action:hover .pmd-floating-action-btn:before,
+.menu--floating--open .pmd-floating-action-btn:before {
+  opacity: 1;
+}
+
+.pmd-floating-hidden {
+  display: none;
+}
+
+.pmd-floating-action-btn.btn:hover {
+  overflow: visible;
+}
+
+.pmd-floating-action-btn .ink {
+  width: 50px;
+  height: 50px;
+}
+
+.btn-aboutUs {
+  color: $white !important;
+  background: $modCyan !important;
+  font-weight: 400;
+  border-radius: 0;
+  padding: $nav-btn-padding-y $nav-btn-padding-x;
+  overflow: hidden;
+  position: relative;
+  top: -2px;
+  border: 0;
+  margin: auto;
+  @include prefix(transition, all 0.5s);
+  z-index: 0;
+  outline: none !important;
+
+  &:after {
+    @include prefix(transition, all 0.5s);
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(66, 171, 158, 0);
+    z-index: -1;
+  }
+
+  &:hover {
+    color: #fff !important;
+    text-decoration: $link-decoration;
+    background: $white;
+    border-radius: 0;
+  }
+
+  &:hover:after {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background: rgba(66, 171, 158, 0.88);
+  }
+}
+
+.btn-nav-scroll {
+  position: absolute;
+  bottom: 0;
+  margin: 0 20px 7px;
+  background: rgba($limeGreen, 0.5);
+  color: #fff;
+  border-radius: 25px;
+  border: 2px solid $gray-500;
+  height: 40px;
+  width: 60px;
+  overflow: hidden;
+  transition: all 0.5s;
+
+  i {
+    margin: 0;
+  }
+
+  .scroll-left {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-bottom: 2px solid $gray-900;
+    border-right: 2px solid $gray-900;
+    z-index: 9;
+    -webkit-transform: translate(50%, 0%) rotate(135deg);
+    -moz-transform: translate(50%, 0%) rotate(135deg);
+    transform: translate(50%, 0%) rotate(135deg);
+    -webkit-animation: fade_move_left 1s ease-in-out infinite;
+    -moz-animation: fade_move_left 1s ease-in-out infinite;
+    animation: fade_move_left 1s ease-in-out infinite;
+  }
+
+  .scroll-right {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-bottom: 2px solid $gray-900;
+    border-right: 2px solid $gray-900;
+    z-index: 9;
+    -webkit-transform: translate(-50%, 0%) rotate(-45deg);
+    -moz-transform: translate(-50%, 0%) rotate(-45deg);
+    transform: translate(-50%, 0%) rotate(-45deg);
+    -webkit-animation: fade_move_right 1s ease-in-out infinite;
+    -moz-animation: fade_move_right 1s ease-in-out infinite;
+    animation: fade_move_right 1s ease-in-out infinite;
+  }
+
+  &:hover {
+    background: rgba($a-savia, 0.5);
+    border-color: $a-savia;
+
+    .scroll-left,
+    .scroll-right {
+      border-bottom-color: $white;
+      border-right-color: $white;
+    }
+  }
+
+  @keyframes fade_move_down {
+    0% {
+      transform: translate(0, -10px) rotate(45deg);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(0, 23px) rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade_move_left {
+    0% {
+      transform: translate(23px, 0) rotate(135deg);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(-20px, 0) rotate(135deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade_move_right {
+    0% {
+      transform: translate(-20px, 0) rotate(-45deg);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(23px, 0) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+}
