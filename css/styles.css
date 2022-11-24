@@ -225,4 +225,8 @@ footer {
   .contenedor__videos iframe {
     width: 50%;
   }
+
+  .contenedor__menu {
+    display: none;
+  }
 }
