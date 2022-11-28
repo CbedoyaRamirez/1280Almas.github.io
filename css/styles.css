@@ -259,7 +259,6 @@ body {
 
 table, th, td 
 {
-    border: solid 1px;
     border-collapse: collapse;
     padding: 2px 3px;
     text-align: center;
