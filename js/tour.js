@@ -8,7 +8,7 @@ async function obtenerTour() {
     }).then(data => {
         data.forEach(tour => {
             const row = document.createElement('tr')
-            row.innerHTML +=  `<td>${tour.fecha}</td> <td>${tour.ciudad}</td> <button type="button" class="btn btn-primary">Primary</button> `;
+            row.innerHTML +=  `<td>${tour.fecha}</td> <td>${tour.ciudad}</td>`;
             tabla.appendChild(row);
         })
     })
