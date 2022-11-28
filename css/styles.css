@@ -259,13 +259,15 @@ body {
 
 table, th, td 
 {
-    border: solid 1px #ddd;
+    border: solid 1px;
     border-collapse: collapse;
     padding: 2px 3px;
     text-align: center;
+    font-family: "Inconsolata", monospace;
 }
 th { 
     font-weight:bold;
+    color: rgb(178, 174, 57);
 }
 
 .tour {
