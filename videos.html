@@ -6,37 +6,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="./images/puno.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
     <title>1280 Almas</title>
 </head>
 
 <body>
 
-    <header class="header wrapper">
-        <nav class="nav">
-            <img class="nav__logo" src="./images/menu/1280Almas.png" alt="logo 1280 almas">
-            <div class="nav__links" id="menu">
-                <a href="tour.html" class="nav__link">Tour</a>
-                <a href="musica.html" class="nav__link">Musica</a>
-                <a href="videos.html" class="nav__link">Videos</a>
-                <a href="info.html" class="nav__link">Info</a>
-                <a href="contacto.html" class="nav__link">Contacto</a>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="nav__logo" src="./images/menu/1280Almas.png"
+                    alt="logo 1280 almas"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="tour.html" class="nav-link">Tour</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="musica.html" class="nav-link ">Musica</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="videos.html" class="nav-link ">Videos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="info.html" class="nav-link ">Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contacto.html" class="nav-link ">Contacto</a>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-success" type="submit">Buscar</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- <main class="video-thumb-grid wrapper">
+
+
+        <a href="https://www.youtube.com/watch?v=p9RtKPyAFZQ" data-youtube-id="p9RtKPyAFZQ"
+            class="video-thumb js-trigger-video-modal">
+            <img class="video-banner-img" src="images/videos/barricada.jpg" alt="" />
+        </a>
+        <a href="https://www.youtube.com/watch?v=p9RtKPyAFZQ" data-youtube-id="p9RtKPyAFZQ"
+            class="video-thumb js-trigger-video-modal">
+            <img class="video-banner-img" src="images/videos/Herencia.jpg" alt="" />
+        </a>
+        <a href="https://www.youtube.com/watch?v=p9RtKPyAFZQ" data-youtube-id="p9RtKPyAFZQ"
+            class="video-thumb js-trigger-video-modal">
+            <img class="video-banner-img" src="images/videos/pasajero.jpg" alt="" />
+        </a>
+
+
+
+        <section class="video-modal">
+
+            <div id="video-modal-content" class="video-modal-content">
+
+                <iframe id="youtube" width="100%" height="100%" frameborder="0" allow="autoplay" allowfullscreen
+                    src=""></iframe>
+
+                <a href="#" class="close-video-modal">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve"
+                        width="24" height="24">
+
+                        <g id="icon-x-close">
+                            <path fill="#ffffff"
+                                d="M30.3448276,31.4576271 C29.9059965,31.4572473 29.4852797,31.2855701 29.1751724,30.980339 L0.485517241,2.77694915 C-0.122171278,2.13584324 -0.104240278,1.13679247 0.52607603,0.517159487 C1.15639234,-0.102473494 2.17266813,-0.120100579 2.82482759,0.477288136 L31.5144828,28.680678 C31.9872448,29.1460053 32.1285698,29.8453523 31.8726333,30.4529866 C31.6166968,31.0606209 31.0138299,31.4570487 30.3448276,31.4576271 Z"
+                                id="Shape"></path>
+                            <path fill="#ffffff"
+                                d="M1.65517241,31.4576271 C0.986170142,31.4570487 0.383303157,31.0606209 0.127366673,30.4529866 C-0.12856981,29.8453523 0.0127551942,29.1460053 0.485517241,28.680678 L29.1751724,0.477288136 C29.8273319,-0.120100579 30.8436077,-0.102473494 31.473924,0.517159487 C32.1042403,1.13679247 32.1221713,2.13584324 31.5144828,2.77694915 L2.82482759,30.980339 C2.51472031,31.2855701 2.09400353,31.4572473 1.65517241,31.4576271 Z"
+                                id="Shape"></path>
+                        </g>
+
+                    </svg>
+                </a>
+
             </div>
 
-            <a href="#menu" class="nav__menu">
-                <img src="images/menu/icon-menu.svg" alt="imagen menu" class="nav__img">
-            </a>
 
-            <a href="#" class="nav__close">
-                <img src="images/menu/icon-menu-close.svg" alt="Imagen cerrar" class="nav__img">
-            </a>
+            <div class="overlay"></div>
 
-        </nav>
-    </header>
 
-    <main class="main wrapper">
-
-    </main>
+        </section>
+    </main> -->
 
     <!-- <footer class="footer">
         <div class="contenedor__footer">
@@ -51,6 +120,8 @@
             </a>
         </div>
     </footer> -->
+
+    <!-- <script src="js/video.js"></script> -->
 
 </body>
 
